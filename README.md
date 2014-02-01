@@ -11,6 +11,10 @@ Sublime Text and Visual Studio offer such a behaviour. This plug-in implements t
 
 Download and compile the project (the plugin will be installed during the build process) or download the [binary](https://github.com/mthiesen/Xcode_copy_line/releases/download/v1.0/Xcode_copy_line.xcplugin.zip) and unzip it to `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/`
 
+### Compatibility
+
+The plug-in is compatible with Xcode 4, Xcode 5 and Xcode 5.1. However, it cannot be build with Xcode 5.1 because Apple dropped GC support which is needed for Xcode 4 compatibility.
+
 ### Thanks
 
 * [insanehunter](https://github.com/insanehunter) and his [XCode4_beginning_of_line](https://github.com/insanehunter/XCode4_beginning_of_line) project which served as an inspiration
