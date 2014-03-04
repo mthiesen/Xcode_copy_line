@@ -3,7 +3,7 @@ Xcode_copy_line
 
 ### Description
 
-Many sorce editors allow users to copy/cut the current line by using the shortcuts `⌘C` and `⌘X` while there is no selected text. If a line that was copied in such a way is pasted, it is inserted directly above the current line without moving the cursor. This is very useful while restructuring code and all but eliminates the need to memorize additional shortcuts for transposing lines.
+Many source editors allow users to copy/cut the current line by using the shortcuts `⌘C` and `⌘X` while there is no selected text. If a line that was copied in such a way is pasted, it is inserted directly above the current line without moving the cursor. This is very useful while restructuring code and all but eliminates the need to memorize additional shortcuts for transposing lines.
 
 Sublime Text and Visual Studio offer such a behaviour. This plug-in implements this behaviour in Xcode.
 
