@@ -195,7 +195,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = /Developer;
-				OTHER_CFLAGS = "-fobjc-gc";
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -223,7 +222,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = /Developer;
-				OTHER_CFLAGS = "-fobjc-gc";
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = xcplugin;
 			};

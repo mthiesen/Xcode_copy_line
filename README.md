@@ -13,7 +13,7 @@ Download and compile the project (the plugin will be installed during the build 
 
 ### Compatibility
 
-The plug-in is compatible with Xcode 4, Xcode 5 and Xcode 5.1. However, it cannot be build with Xcode 5.1 because Apple dropped GC support which is needed for Xcode 4 compatibility.
+The plug-in is compatible with Xcode 5 and Xcode 5.1.
 
 ### Thanks
 
