@@ -13,7 +13,7 @@ Download and compile the project (the plugin will be installed during the build 
 
 ### Compatibility
 
-The plug-in is compatible with Xcode 5, Xcode 5.1, Xcode 6, Xcode 6.1, Xcode 6.2 and Xcode 6.3 Beta.
+The plug-in is compatible with Xcode 5, Xcode 5.1, Xcode 6, Xcode 6.1, Xcode 6.2 and Xcode 6.3.
 
 ### Thanks
 
