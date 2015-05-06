@@ -247,13 +247,26 @@ const int kHookCount = sizeof(methodHooks) / sizeof(methodHooks[0]);
 @implementation Xcode_copy_line
 
 - (id)init {
+    // Hook into this notification in order to check menu items, since Xcode plugins get loaded in
+    //   applicationWillFinishLaunching as of 6.4.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidFinishLaunching:)
+                                                 name:NSApplicationDidFinishLaunchingNotification
+                                               object:nil];
+    
+    return self;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
     const BOOL hookingSuccessful = (self = [super init]) && [self hookMethods];
     if (!hookingSuccessful)
         [self unhookMethods];
     
     NSLog(@"%@ %@", [self className], hookingSuccessful ? @"initialized" : @"failed to initialize");
     
-    return self;
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSApplicationDidFinishLaunchingNotification
+                                                  object:nil];
 }
 
 - (BOOL)hookMethods {
@@ -262,7 +275,7 @@ const int kHookCount = sizeof(methodHooks) / sizeof(methodHooks[0]);
         cutMenuItem = [[editMenu submenu] itemWithTitle:@"Cut"];
         copyMenuItem = [[editMenu submenu] itemWithTitle:@"Copy"];
     }
-    
+
     if (!cutMenuItem) {
         NSLog(@"%@ ERROR: Unable to find Cut menu item", [self className]);
         return NO;
