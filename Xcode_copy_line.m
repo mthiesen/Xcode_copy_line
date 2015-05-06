@@ -276,8 +276,6 @@ const int kHookCount = sizeof(methodHooks) / sizeof(methodHooks[0]);
         copyMenuItem = [[editMenu submenu] itemWithTitle:@"Copy"];
     }
 	
-	NSLog(@"EDIT MENU %@", [NSApp mainMenu]);
-    
     if (!cutMenuItem) {
         NSLog(@"%@ ERROR: Unable to find Cut menu item", [self className]);
         return NO;
