@@ -120,7 +120,7 @@ static void cutHook(id self_, SEL selector, id sender) {
         // Cut the current line.
         [self.undoManager beginUndoGrouping];
         [self xcl_markCursorPositionForUndo];
-        [self doCommandBySelector:@selector(selectLine:)];
+        [self doCommandBySelector:@selector(selectParagraph:)];
         [self doCommandBySelector:@selector(cut:)];
         [self.undoManager endUndoGrouping];
         
