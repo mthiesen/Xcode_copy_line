@@ -147,7 +147,7 @@ static void copyHook(id self_, SEL selector, id sender) {
         
         // Copy the current line.
         const NSUInteger cursorPos = self.selectedRange.location;
-        [self doCommandBySelector:@selector(selectLine:)];
+        [self doCommandBySelector:@selector(selectParagraph:)];
         [self doCommandBySelector:@selector(copy:)];
         [self setSelectedRange:NSMakeRange(cursorPos, 0)];
         
