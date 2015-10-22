@@ -9,11 +9,11 @@ Sublime Text and Visual Studio offer such a behaviour. This plug-in implements t
 
 ### Installation
 
-Download and compile the project (the plugin will be installed during the build process) or download the [binary](https://github.com/mthiesen/Xcode_copy_line/releases/download/v1.9/Xcode_copy_line.xcplugin.zip) and unzip it to `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/`
+Download and compile the project (the plugin will be installed during the build process) or download the [binary](https://github.com/mthiesen/Xcode_copy_line/releases/download/v1.10/Xcode_copy_line.xcplugin.zip) and unzip it to `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/`
 
 ### Compatibility
 
-The plug-in is compatible with Xcode 5, Xcode 6, Xcode 7 and Xcode 7.1 beta.
+The plug-in is compatible with Xcode 5, Xcode 6, Xcode 7 and Xcode 7.1.
 
 ### Thanks
 
