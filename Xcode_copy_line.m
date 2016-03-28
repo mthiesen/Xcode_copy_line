@@ -120,7 +120,7 @@ static void cutHook(id self_, SEL selector, id sender) {
         // Cut the current line.
         [self.undoManager beginUndoGrouping];
         [self xcl_markCursorPositionForUndo];
-        [self doCommandBySelector:@selector(selectLine:)];
+        [self doCommandBySelector:@selector(selectParagraph:)];
         [self doCommandBySelector:@selector(cut:)];
         [self.undoManager endUndoGrouping];
         
@@ -147,7 +147,7 @@ static void copyHook(id self_, SEL selector, id sender) {
         
         // Copy the current line.
         const NSUInteger cursorPos = self.selectedRange.location;
-        [self doCommandBySelector:@selector(selectLine:)];
+        [self doCommandBySelector:@selector(selectParagraph:)];
         [self doCommandBySelector:@selector(copy:)];
         [self setSelectedRange:NSMakeRange(cursorPos, 0)];
         
@@ -172,17 +172,17 @@ static void pasteHook(id self_, SEL selector, id sender) {
         const NSUInteger cursorColumn = [self xcl_cursorColumn];
         
         // We need a slightly differend behaviour when the cursor is on the first line.
-        const BOOL cursorIsInFirstLine = [[self string] lineRangeForRange:[self selectedRange]].location == 0;
+        const BOOL cursorIsInFirstLine = [[self string] paragraphRangeForRange:[self selectedRange]].location == 0;
         
         [self.undoManager beginUndoGrouping];
         
         [self xcl_markCursorPositionForUndo];
         
         if (cursorIsInFirstLine) {
-            [self doCommandBySelector:@selector(moveToBeginningOfLine:)];
+            [self doCommandBySelector:@selector(moveToBeginningOfParagraph:)];
         } else {
             [self doCommandBySelector:@selector(moveUp:)];
-            [self doCommandBySelector:@selector(moveToEndOfLine:)];
+            [self doCommandBySelector:@selector(moveToEndOfParagraph:)];
             [self doCommandBySelector:@selector(insertNewline:)];
         }
         
